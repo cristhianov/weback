@@ -1,16 +1,9 @@
-var express = require('express');
+var express = require("express");
 var router = express.Router();
-const Videogame = require("../models/Videogame")
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  Videogame.find()
-    .then(videogames => {
-      res.status(200).json({videogames});
-    })
-    .catch(e=>{
-      console.log(e);
-    });
+router.get("/", function (req, res, next) {
+  res.send({ title: "Express vamos por buen camino" });
 });
 
 module.exports = router;
